@@ -19,10 +19,10 @@ This project implements a React web application that allows users to search for 
 
 ### 3. Component Structure
 The application follows a modular component structure:
-- **App.js**: Main component that manages state and data flow
-- **SearchBar.js**: Input component for search queries
-- **ResultsList.js**: Displays search results with add-to-favorites functionality
-- **FavoritesList.js**: Displays and manages favorite items
+- **App.jsx**: Main component that manages state and data flow
+- **SearchBar.jsx**: Input component for search queries
+- **ResultsList.jsx**: Displays search results with add-to-favorites functionality
+- **FavoritesList.jsx**: Displays and manages favorite items
 
 ### 4. State Management
 - Uses React's `useState` for component-level state management
@@ -102,7 +102,7 @@ The implementation includes instructions for setting up a local mock API using j
 ## Best Practices Implemented
 
 ### 1. Code Organization
-- Reusable component architecture
+- Modular component architecture
 - Proper file structure
 
 ### 2. Performance Optimization
