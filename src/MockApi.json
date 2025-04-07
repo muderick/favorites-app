@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "iPhone 13",
+      "body": "A sophisticated smartphone with advanced camera system and powerful processor.",
+      "category": "electronics"
+    },
+    {
+      "id": 2,
+      "title": "Samsung Galaxy S21",
+      "body": "Feature-rich Android smartphone with excellent display and performance.",
+      "category": "electronics"
+    },
+    {
+      "id": 3,
+      "title": "MacBook Pro",
+      "body": "Professional-grade laptop with high performance for creative work.",
+      "category": "electronics"
+    },
+    {
+      "id": 4,
+      "title": "Nike Air Max",
+      "body": "Comfortable athletic shoes with iconic air cushioning technology.",
+      "category": "fashion"
+    },
+    {
+      "id": 5,
+      "title": "The Alchemist",
+      "body": "A novel by Paulo Coelho about following your dreams.",
+      "category": "books"
+    },
+    {
+      "id": 6,
+      "title": "To Kill a Mockingbird",
+      "body": "Classic novel by Harper Lee addressing racial injustice.",
+      "category": "books"
+    },
+    {
+      "id": 7,
+      "title": "Yoga Mat",
+      "body": "Non-slip exercise mat for yoga and pilates practices.",
+      "category": "fitness"
+    },
+    {
+      "id": 8,
+      "title": "Resistance Bands",
+      "body": "Set of elastic bands for strength training and rehabilitation.",
+      "category": "fitness"
+    },
+    {
+      "id": 9,
+      "title": "Coffee Maker",
+      "body": "Automatic drip coffee machine for brewing your favorite coffee.",
+      "category": "home"
+    },
+    {
+      "id": 10,
+      "title": "Food Processor",
+      "body": "Kitchen appliance for chopping, blending, and mixing ingredients.",
+      "category": "home"
+    }
+  ]
+}
