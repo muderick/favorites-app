@@ -34,9 +34,9 @@ The application follows a modular component structure:
   - `error`: Stores any error messages from API calls
 
 ### 5. API Integration
-- Fetches data from JSONPlaceholder API (for demonstration)
+- Fetches mock data from MockApi.json (for demonstration) using json-server to watch backend
 - Properly handles loading states and errors
-- Alternative mock API setup provided using json-server
+- Alternatively you can use JSONPlaceholder mock API for the demonstrarion
 
 ### 6. Responsive Design
 - Mobile-first approach with CSS Grid
@@ -68,13 +68,16 @@ This implementation:
 
 ### Favorites Persistence
 ```javascript
-// Load favorites from localStorage on mount
-useEffect(() => {
-  const savedFavorites = localStorage.getItem('favorites');
-  if (savedFavorites) {
-    setFavorites(JSON.parse(savedFavorites));
-  }
-}, []);
+// Load favorites from localStorage
+  const [favorites, setFavorites] = useState(() => {
+    try {
+      const savedFavorites = localStorage.getItem("favorites");
+      return savedFavorites ? JSON.parse(savedFavorites) : [];
+    } catch (e) {
+      console.error("Error initializing favorites:", e);
+      return [];
+    }
+  });
 
 // Save favorites to localStorage when they change
 useEffect(() => {
@@ -88,15 +91,15 @@ This implementation:
 3. Ensures favorites persist across browser sessions
 
 ### Error Handling
-The app implements comprehensive error handling:
+The app implements better error handling:
 1. API error catching with user-friendly messages
 2. Loading states with visual indicators
 3. Empty state handling for both search results and favorites
 
 ## Mock API Setup
-The implementation includes instructions for setting up a local mock API using json-server:
+The implementation includes procedure for setting up a local mock API using json-server:
 1. Install json-server: `npm install -g json-server`
-2. Run the server with the provided mock data: `json-server --watch mockApi.js --port 3001`
+2. Run the server with the mock data: `json-server --watch mockApi.js --port 3001`
 3. Update the fetch URL in `App.js` to use the local server: `http://localhost:3001/items?q=${term}`
 
 ## Best Practices Implemented
@@ -121,16 +124,20 @@ The implementation includes instructions for setting up a local mock API using j
 - Sufficient color contrast
 
 ### 5. Documentation
-- Comprehensive JSDoc comments
+- Comprehensive JSDoc (JavaScript Documentation) comments
 - Clear component and function descriptions
-- Explanation of key implementation details
+- Explanation of important implementation details
 
 ## Testing
 To test this application:
 
-1. Run the application using `npm start`
-2. Try searching for various terms to see the debounced search in action
-3. Add items to favorites and verify they appear in the favorites section
-4. Remove items from favorites
-5. Refresh the page to verify favorites persistence
-6. Test on different screen sizes to verify responsive design
+1. Clone the application to local environment
+2. Install json-server: `npm install -g json-server`
+3. Run `npm install or npm i`
+4. Run the server with the mock data on a separate terminal: `json-server --watch mockApi.js --port 3001` keep the terminal open
+5. Run the main application using `npm start`
+6. Try searching for various terms to see the debounced search in action
+7. Add items to favorites and verify they appear in the favorites section
+8. Remove items from favorites
+9. Refresh the page to verify favorites persistence
+10. Test on different screen sizes to verify responsive design
