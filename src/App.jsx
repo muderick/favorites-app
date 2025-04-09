@@ -9,7 +9,7 @@ import "./App.css";
  * Handles search functionality, favorites management, and API calls
  */
 const App = () => {
-  const [searchResults, setSearchResults] = useState({});
+  const [searchResults, setSearchResults] = useState([]);
   const [favorites, setFavorites] = useState(() => {
     try {
       const savedFavorites = localStorage.getItem("favorites");
@@ -60,15 +60,27 @@ const App = () => {
       //     `https://jsonplaceholder.typicode.com/posts?q=${term}`
       //   );
 
-      const response = await fetch(`http://localhost:3001/items?q=${term}`);
+      const response = await fetch("http://localhost:3001/items");
 
       if (!response.ok) {
         throw new Error("Failed to fetch search results");
       }
 
-      const data = await response.json();
-      console.log(data);
-      setSearchResults(Array.isArray(data) ? data : []);
+      const allItems = await response.json();
+
+      // Filter items locally based on search term
+      const filteredItems = allItems.filter((item) => {
+        // Case-insensitive search in title and body
+        const searchTermLower = term.toLowerCase();
+        return (
+          item.title.toLowerCase().includes(searchTermLower) ||
+          item.body.toLowerCase().includes(searchTermLower) || 
+          item.category.toLowerCase().includes(searchTermLower)
+        );
+      });
+
+      console.log("Filtered results:", filteredItems);
+      setSearchResults(filteredItems);
     } catch (error) {
       setError(error.message);
       console.error("Error fetching search results:", error);

@@ -33,7 +33,7 @@ const ResultsList = ({ results, onAddToFavorites, favorites }) => {
     <div className="results-list">
       <h2>Search Results</h2>
 
-      {results.length === 0 ? (
+      {resultsArray.length === 0 ? (
         <p className="no-results">
           No results to display. Try Searching for something.
         </p>
