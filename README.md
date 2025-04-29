@@ -36,7 +36,7 @@ The application follows a modular component structure:
 ### 5. API Integration
 - Fetches mock data from MockApi.json (for demonstration) using json-server to watch backend
 - Properly handles loading states and errors
-- Alternatively you can use JSONPlaceholder mock API for the demonstrarion
+- Alternatively you can use JSONPlaceholder mock API for the demo
 
 ### 6. Responsive Design
 - Mobile-first approach with CSS Grid
@@ -99,7 +99,7 @@ The app implements better error handling:
 ## Mock API Setup
 The implementation includes procedure for setting up a local mock API using json-server:
 1. Install json-server: `npm install -g json-server`
-2. Run the server with the mock data: `json-server --watch mockApi.js --port 3001`
+2. Run the server with the mock data: `json-server --watch MockApi.js --port 3001`
 3. Update the fetch URL in `App.js` to use the local server: `http://localhost:3001/items?q=${term}`
 
 ## Best Practices Implemented
@@ -134,7 +134,7 @@ To test this application:
 1. Clone the application to local environment
 2. Install json-server: `npm install -g json-server`
 3. Run `npm install or npm i`
-4. Run the server with the mock data on a separate terminal: `json-server --watch mockApi.js --port 3001` keep the terminal open
+4. Run the server with the mock data on a separate terminal: `json-server --watch mockApi.json --port 3001` keep the terminal open
 5. Run the main application using `npm start`
 6. Try searching for various terms to see the debounced search in action
 7. Add items to favorites and verify they appear in the favorites section
